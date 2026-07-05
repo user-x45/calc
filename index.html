@@ -9,16 +9,14 @@
     html {
       touch-action: pan-x pan-y;
     }
-
     * {
       font-family: "BIZ UDPGothic", "HiraginoSans-W2", "Hiragino Kaku Gothic ProN", Meiryo, "メイリオ", sans-serif;
       box-sizing: border-box;
       transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
     }
-
     :root {
       line-height: 1.5;
-      --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      --bg-gradient: #f3f4f6;
       --calc-bg: rgba(255, 255, 255, 0.65);
       --calc-blur: 20px;
       --calc-border: 1px solid rgba(255, 255, 255, 0.4);
@@ -41,10 +39,9 @@
       --btn-disabled: #cbd5e1;
       --focus-color: #6366f1;
     }
-
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+        --bg-gradient: #1a1a1a;
         --calc-bg: rgba(30, 41, 59, 0.7);
         --calc-blur: 25px;
         --calc-border: 1px solid rgba(255, 255, 255, 0.08);
@@ -68,7 +65,6 @@
         --focus-color: #818cf8;
       }
     }
-
     h1, h2, h3, h4, h5, h6,
     li, th, td, div, span,
     code, pre, figcaption, caption,
@@ -77,7 +73,6 @@
     p {
       color: var(--txt-primary);
     }
-
     body {
       background: var(--bg-gradient);
       margin: 0;
@@ -88,24 +83,19 @@
       min-height: 100dvh;
       overflow: hidden;
     }
-
     img {
       max-width: 100%;
     }
-
     svg {
       fill: currentcolor;
     }
-
     small {
       font-size: 0.8em;
     }
-
     *:focus-visible {
       outline: 2px solid var(--focus-color);
       outline-offset: 2px;
     }
-
     .hp_srOnly {
       position: absolute !important;
       clip: rect(0 0 0 0) !important;
@@ -117,7 +107,6 @@
       padding: 0 !important;
       border: 0 !important;
     }
-
     .b01ly_calc {
       --ly_btnArray:
         "nav main main main aside"
@@ -149,7 +138,6 @@
       height: auto;
       max-width: 92dvw;
     }
-
     .is_leftMode .b01ly_calc {
       --ly_btnArray:
         "aside main main main nav"
@@ -162,7 +150,6 @@
         "b1 b2 b3"
         "be bd b0";
     }
-
     @media (max-aspect-ratio: 5/6), (max-width: 500px) {
       .b01ly_calc {
         --ly_btnArray:
@@ -177,7 +164,6 @@
         --size_btn: min(72px, 20dvw);
         padding: 1.2rem;
       }
-
       .is_leftMode .b01ly_calc {
         --ly_btnArray:
           "nav  nav  nav  nav  "
@@ -187,7 +173,6 @@
           "aside main main main";
       }
     }
-
     .b01ly_calc_header {
       width: 100%;
       margin-bottom: 1.2rem;
@@ -200,13 +185,11 @@
       background: rgba(0, 0, 0, 0.03);
       border-radius: 16px;
     }
-
     @media (prefers-color-scheme: dark) {
       .b01ly_calc_header {
         background: rgba(255, 255, 255, 0.03);
       }
     }
-
     #b01js_label {
       width: 100%;
       height: 24px;
@@ -218,7 +201,6 @@
       white-space: nowrap;
       font-weight: 400;
     }
-
     #b01js_output {
       width: 100%;
       height: 54px;
@@ -230,27 +212,23 @@
       overflow: hidden;
       display: block;
     }
-
     .b01ly_calc_btnArray {
       display: grid;
       gap: var(--gap);
       grid-template-areas: var(--ly_btnArray);
     }
-
     .b01ly_calc_nav {
       grid-area: nav;
       display: flex;
       gap: var(--gap);
       flex-flow: var(--flexFlow_nav);
     }
-
     .b01ly_calc_main {
       grid-area: main;
       display: grid;
       gap: var(--gap);
       grid-template-areas: var(--ly_numArray);
     }
-
     #b01js_1 { grid-area: b1; }
     #b01js_2 { grid-area: b2; }
     #b01js_3 { grid-area: b3; }
@@ -263,14 +241,12 @@
     #b01js_0 { grid-area: b0; }
     #b01js_DecimalPoint { grid-area: bd; }
     #b01js_Equal { grid-area: be; }
-
     .b01ly_calc_aside {
       grid-area: aside;
       display: flex;
       gap: var(--gap);
       flex-flow: column nowrap;
     }
-
     .b01el_calcBtn {
       appearance: none;
       height: var(--size_btn);
@@ -290,60 +266,49 @@
       justify-content: center;
       position: relative;
     }
-
     .b01el_calcBtn:active {
       transform: scale(0.94);
     }
-
     .b01el_calcBtn.b01el_calcBtn__primary {
       color: var(--btn-op-txt);
       background: var(--btn-op-bg);
       box-shadow: var(--btn-op-shadow);
     }
-
     .b01el_calcBtn.b01el_calcBtn__primary:hover {
       background: var(--btn-op-hover);
     }
-
     .b01el_calcBtn.b01el_calcBtn__primary:disabled {
       background: var(--btn-disabled);
       box-shadow: none;
       cursor: not-allowed;
     }
-
     .b01el_calcBtn.b01el_calcBtn__secondary {
       color: var(--btn-func-txt);
       background: var(--btn-func-bg);
     }
-
     .b01el_calcBtn.b01el_calcBtn__secondary:hover {
       background: var(--btn-func-hover);
     }
-
     .b01el_calcBtn.b01el_calcBtn__secondary:disabled {
       background: var(--btn-disabled);
       opacity: 0.5;
       cursor: not-allowed;
     }
-
     .b01el_calcBtn.b01el_calcBtn__tertiary {
       color: var(--btn-num-txt);
       background: var(--btn-num-bg);
       border: var(--btn-num-border);
       box-shadow: var(--btn-num-shadow);
     }
-
     .b01el_calcBtn.b01el_calcBtn__tertiary:hover {
       background: var(--btn-num-hover);
       box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
     }
-
     .b01el_calcBtn.b01el_calcBtn__tertiary:disabled {
       background: var(--btn-disabled);
       box-shadow: none;
       cursor: not-allowed;
     }
-
     .b01el_calcBtn.b01el_calcBtn__iconLabel {
       display: flex;
       flex-direction: column;
@@ -351,19 +316,16 @@
       justify-content: center;
       gap: 2px;
     }
-
     .b01el_calcBtn.b01el_calcBtn__iconLabel>svg {
       color: var(--btn-func-txt);
       height: calc(var(--size_btn) * 0.32);
       width: calc(var(--size_btn) * 0.32);
     }
-
     .b01el_calcBtn.b01el_calcBtn__iconLabel>span {
       font-size: 10px;
       font-weight: 700;
       color: var(--btn-func-txt);
     }
-
     .b01el_calcBtn:disabled::after {
       width: 40%;
       height: 2px;

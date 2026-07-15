@@ -522,9 +522,11 @@ class htmlCalculator extends Calculator{
 
   refreshButtons(){
     const invalidNames = INVALID_INPUTS_BY_STATE[this._state];
-    for(const name of VALID_INPUTS){
-      this._btn[name].disabled = invalidNames.includes(name);
-    }
+    requestAnimationFrame(() => {
+      for(const name of VALID_INPUTS){
+        this._btn[name].disabled = invalidNames.includes(name);
+      }
+    });
   }
 }
 
